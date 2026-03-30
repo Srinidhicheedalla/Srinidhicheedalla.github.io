@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Srinidhi Cheedalla — AI & ML Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#ffffff;--bg2:#f7f6f2;
+  --accent:#2347a0;--accent2:#3a5fc8;--accent-light:#eaeffa;
+  --dark:#111827;--mid:#4b5563;--muted:#9ca3af;--border:#e5e7eb;
+  --green:#059669;
+  --fd:'Fraunces',serif;--fb:'Outfit',sans-serif;
+}
+body{font-family:var(--fb);background:var(--bg);color:var(--dark);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0.85rem 6%;background:rgba(255,255,255,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 2px 14px rgba(0,0,0,.07)}
+.logo{font-family:var(--fd);font-size:1.2rem;color:var(--dark);text-decoration:none}
+.logo span{color:var(--accent)}
+.nl{display:flex;gap:1.8rem;list-style:none;align-items:center}
+.nl a{font-size:0.83rem;font-weight:500;color:var(--mid);text-decoration:none;transition:color .2s}
+.nl a:hover{color:var(--accent)}
+.nbtn{background:var(--accent)!important;color:#fff!important;padding:0.42rem 1rem;border-radius:100px!important}
+.nbtn:hover{opacity:.88}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hbg span{width:21px;height:2px;background:var(--dark);border-radius:2px}
+.mmenu{display:none;position:fixed;top:54px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:0.8rem 6%;flex-direction:column;z-index:998}
+.mmenu a{font-size:0.9rem;font-weight:500;color:var(--mid);text-decoration:none;padding:0.6rem 0;border-bottom:1px solid var(--border)}
+.mmenu.open{display:flex}
+
+/* HERO */
+#home{min-height:auto;display:flex;align-items:center;padding:6rem 6% 3rem;position:relative;overflow:hidden}
+.hbg-el{position:absolute;inset:0;background:radial-gradient(ellipse 55% 55% at 75% 45%,#dde7fa,transparent 65%),radial-gradient(ellipse 30% 30% at 12% 85%,#eef2fd,transparent 60%);pointer-events:none}
+#pc{position:absolute;inset:0;pointer-events:none;opacity:.55}
+.hi{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:2.5rem;align-items:center;width:100%;max-width:1080px;margin:0 auto}
+.hl{max-width:580px}
+.badge{display:inline-flex;align-items:center;gap:0.4rem;background:var(--accent-light);color:var(--accent);font-size:0.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:0.28rem 0.85rem;border-radius:100px;margin-bottom:0.6rem;animation:fu .5s ease both}
+.badge::before{content:'';width:5px;height:5px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+h1{font-family:var(--fd);font-size:clamp(2.4rem,5vw,4rem);line-height:1.06;color:var(--dark);margin-bottom:0.4rem;animation:fu .5s .08s ease both}
+h1 em{color:var(--accent);font-style:italic}
+.htype{font-size:0.95rem;font-weight:300;color:var(--mid);margin-bottom:0.9rem;min-height:1.5rem;animation:fu .5s .14s ease both}
+.htype strong{color:var(--accent);font-weight:600}
+.hbio{font-size:0.88rem;line-height:1.75;color:var(--mid);max-width:460px;margin-bottom:1.2rem;animation:fu .5s .2s ease both}
+.hbtns{display:flex;gap:0.75rem;flex-wrap:wrap;animation:fu .5s .27s ease both}
+.bp{background:var(--accent);color:#fff;padding:0.7rem 1.6rem;border-radius:100px;font-size:0.83rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.bp:hover{transform:translateY(-2px);box-shadow:0 5px 18px rgba(35,71,160,.33)}
+.bs{background:transparent;color:var(--dark);padding:0.7rem 1.6rem;border-radius:100px;font-size:0.83rem;font-weight:500;text-decoration:none;border:1.5px solid var(--border);transition:border-color .2s,color .2s}
+.bs:hover{border-color:var(--accent);color:var(--accent)}
+.hr{display:flex;flex-direction:column;gap:0.8rem;animation:fl .6s .35s ease both}
+.sc{background:#fff;border:1px solid var(--border);border-radius:13px;padding:0.9rem 1.2rem;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.05);min-width:105px}
+.sn{font-family:var(--fd);font-size:1.8rem;color:var(--accent);display:block;line-height:1}
+.sl{font-size:0.65rem;color:var(--muted);font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-top:0.2rem;display:block}
+.sind{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.3rem;font-size:0.62rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;z-index:2}
+.sline{width:1px;height:28px;background:linear-gradient(to bottom,var(--accent),transparent);animation:sla 1.5s infinite}
+
+/* SECTIONS */
+.sec{padding:2.5rem 6%}
+.si{max-width:1080px;margin:0 auto}
+.stag{font-size:0.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem}
+.sh{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--dark);line-height:1.1;margin-bottom:0.35rem}
+.sdiv{width:36px;height:3px;background:var(--accent);border-radius:100px;margin:0.4rem 0 0.8rem}
+.ssub{font-size:0.85rem;color:var(--muted);line-height:1.6;max-width:460px}
+
+/* ABOUT */
+#about{background:var(--bg2)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;align-items:start;margin-top:0.8rem}
+.ap{font-size:0.87rem;line-height:1.76;color:var(--mid);margin-bottom:0.7rem}
+.acards{display:flex;flex-direction:column;gap:0.45rem;margin-top:0.6rem}
+.ac{display:flex;align-items:center;gap:0.75rem;padding:0.7rem 0.9rem;background:#fff;border-radius:10px;border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+.ac:hover{transform:translateX(3px);box-shadow:0 3px 10px rgba(35,71,160,.08)}
+.aci{width:30px;height:30px;border-radius:7px;background:var(--accent-light);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0}
+.ac strong{display:block;font-size:0.8rem;font-weight:600;color:var(--dark)}
+.ac span{font-size:0.72rem;color:var(--muted)}
+.sbars{display:flex;flex-direction:column;gap:0.6rem}
+.sbr{display:flex;flex-direction:column;gap:0.28rem}
+.sbm{display:flex;justify-content:space-between;font-size:0.74rem;font-weight:500;color:var(--mid)}
+.sbt{height:5px;background:var(--border);border-radius:100px;overflow:hidden}
+.sbf{height:100%;background:var(--accent);border-radius:100px;width:0;transition:width 1.1s cubic-bezier(.4,0,.2,1)}
+.cbox{margin-top:0.8rem;padding:0.8rem;background:#fff;border:1px solid var(--border);border-radius:11px}
+.ctitle{font-size:0.67rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem}
+.ci{display:flex;align-items:center;gap:0.45rem;font-size:0.78rem;color:var(--mid);padding:0.25rem 0}
+.ci::before{content:'✓';color:var(--accent);font-weight:700}
+
+/* PROJECTS */
+#projects{background:var(--bg)}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-top:0.8rem}
+.pc{background:#fff;border:1px solid var(--border);border-radius:15px;padding:1.1rem;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.pc::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .28s}
+.pc:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(35,71,160,.1)}
+.pc:hover::after{transform:scaleX(1)}
+.pe{font-size:1.5rem;margin-bottom:0.4rem}
+.pt{font-family:var(--fd);font-size:1.1rem;color:var(--dark);margin-bottom:0.35rem;line-height:1.2}
+.pd{font-size:0.8rem;color:var(--mid);line-height:1.63;margin-bottom:0.6rem;flex:1}
+.ptags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.6rem}
+.ptag{font-size:0.66rem;font-weight:600;background:var(--accent-light);color:var(--accent);padding:0.18rem 0.5rem;border-radius:100px}
+.plink{display:inline-flex;align-items:center;gap:0.3rem;font-size:0.76rem;font-weight:600;color:var(--accent);text-decoration:none;transition:gap .2s;margin-top:auto}
+.plink:hover{gap:0.55rem}
+.plink::after{content:'→'}
+.pc-more{background:var(--accent-light);border-color:transparent;align-items:center;justify-content:center;text-align:center;padding:1.5rem 1.1rem}
+.pc-more h3{font-family:var(--fd);font-size:1.05rem;color:var(--accent);margin-bottom:0.4rem}
+.pc-more p{font-size:0.78rem;color:var(--accent);opacity:.68;line-height:1.55;margin-bottom:0.9rem}
+
+/* SKILLS */
+#skills{background:var(--bg2)}
+.skcat{margin-top:1rem}
+.skcat+.skcat{margin-top:1.2rem}
+.skcl{font-size:0.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.7rem}
+.skg{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:0.65rem}
+.sch{background:#fff;border:1px solid var(--border);border-radius:11px;padding:0.8rem 0.6rem;text-align:center;transition:transform .2s,border-color .2s,box-shadow .2s;cursor:default}
+.sch:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 5px 16px rgba(35,71,160,.09)}
+.schi{font-size:1.35rem;margin-bottom:0.3rem;display:block}
+.schn{font-size:0.7rem;font-weight:600;color:var(--dark)}
+
+/* CONTACT */
+#contact{background:var(--dark)}
+#contact .stag{color:#93aee8}
+#contact .sh{color:#fff}
+#contact .ssub{color:rgba(255,255,255,.42)}
+#contact .sdiv{background:#3a5fc8}
+.cg{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;margin-top:0.8rem;align-items:start}
+.cinf{display:flex;flex-direction:column;gap:0.5rem}
+.cit{display:flex;align-items:center;gap:0.7rem;padding:0.75rem 0.9rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;text-decoration:none;transition:background .2s,transform .2s}
+.cit:hover{background:rgba(58,95,200,.2);transform:translateX(3px)}
+.cii{width:32px;height:32px;border-radius:7px;background:rgba(58,95,200,.28);display:flex;align-items:center;justify-content:center;font-size:0.88rem;flex-shrink:0}
+.cit strong{display:block;font-size:0.65rem;font-weight:700;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.06em;margin-bottom:0.12rem}
+.cit span{font-size:0.8rem;color:#fff}
+.cf{display:flex;flex-direction:column;gap:0.75rem}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.fg{display:flex;flex-direction:column;gap:0.28rem}
+.fg label{font-size:0.65rem;font-weight:700;color:rgba(255,255,255,.38);letter-spacing:.05em;text-transform:uppercase}
+.fg input,.fg textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:8px;padding:0.7rem 0.85rem;color:#fff;font-family:var(--fb);font-size:0.83rem;outline:none;resize:vertical;transition:border-color .2s,background .2s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.2)}
+.fg input:focus,.fg textarea:focus{border-color:#3a5fc8;background:rgba(255,255,255,.09)}
+.fsb{background:var(--accent2);color:#fff;padding:0.75rem 1.6rem;border-radius:100px;font-size:0.83rem;font-weight:600;font-family:var(--fb);border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;align-self:flex-start}
+.fsb:hover{transform:translateY(-2px);box-shadow:0 5px 18px rgba(58,95,200,.48)}
+.fok{display:none;color:#34d399;font-size:0.82rem;font-weight:500;padding:0.4rem 0}
+
+/* FOOTER */
+footer{background:#0a0a16;padding:1.3rem 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.7rem}
+footer p{font-size:0.72rem;color:rgba(255,255,255,.22)}
+.fl{display:flex;gap:1.1rem}
+.fl a{font-size:0.72rem;color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s}
+.fl a:hover{color:#fff}
+
+/* ANIMATIONS */
+@keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fl{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes sla{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(0);transform-origin:bottom}}
+.reveal{opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hr{display:none}
+  .hi{grid-template-columns:1fr}
+  .ag{grid-template-columns:1fr;gap:1.5rem}
+  .cg{grid-template-columns:1fr;gap:1.8rem}
+  .fr{grid-template-columns:1fr}
+  .nl{display:none}
+  .hbg{display:flex}
+  .sec{padding:1.8rem 5%}
+  #home{padding:3.5rem 5% 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#home" class="logo">S<span>C</span></a>
+  <ul class="nl">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact" class="nbtn">Contact</a></li>
+  </ul>
+  <div class="hbg" onclick="document.getElementById('mm').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mmenu" id="mm">
+  <a href="#home" onclick="this.parentElement.classList.remove('open')">Home</a>
+  <a href="#about" onclick="this.parentElement.classList.remove('open')">About</a>
+  <a href="#projects" onclick="this.parentElement.classList.remove('open')">Projects</a>
+  <a href="#skills" onclick="this.parentElement.classList.remove('open')">Skills</a>
+  <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hbg-el"></div>
+  <canvas id="pc"></canvas>
+  <div class="hi">
+    <div class="hl">
+      <div class="badge">Available for opportunities</div>
+      <h1>Srinidhi<br/><em>Cheedalla</em></h1>
+      <p class="htype">I build <strong id="typed"></strong><span id="cur" style="color:var(--accent)">|</span></p>
+      <p class="hbio">AI & ML Engineer and Full Stack Developer passionate about building intelligent systems that solve real-world problems. B.Tech in AI & ML, Class of 2025, Hyderabad.</p>
+      <div class="hbtns">
+        <a href="#projects" class="bp">View My Work</a>
+        <a href="#contact" class="bs">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hr">
+      <div class="sc"><span class="sn">15+</span><span class="sl">Projects</span></div>
+      <div class="sc"><span class="sn">8.0</span><span class="sl">GPA</span></div>
+      <div class="sc"><span class="sn">2025</span><span class="sl">Graduate</span></div>
+    </div>
+  </div>
+  
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="si">
+    <div class="stag">About Me</div>
+    <h2 class="sh">Engineer by passion, builder by nature</h2>
+    <div class="sdiv"></div>
+    <div class="ag">
+      <div class="reveal">
+        <p class="ap">I'm an AI & ML enthusiast with a strong interest in building intelligent systems that solve real-world problems. I enjoy combining software, data, and sometimes hardware to create efficient solutions.</p>
+        <p class="ap">My journey spans from training reinforcement learning agents for real-world traffic systems to building full-stack e-commerce platforms and IoT home automation devices.</p>
+        <p class="ap">I aim to grow into an engineer who builds scalable, impactful tech — actively seeking early-career roles.</p>
+        <div class="acards">
+          <div class="ac"><div class="aci">🎓</div><div><strong>B.Tech — AI & Machine Learning</strong><span>CMR Institute of Technology • GPA: 8.0 • 2025</span></div></div>
+          <div class="ac"><div class="aci">💼</div><div><strong>Account Associate Intern — VXI Global Solutions</strong><span>Reporting, Dashboards, Process Improvement • Oct 2025 – Jan 2026</span></div></div>
+          <div class="ac"><div class="aci">📍</div><div><strong>Hyderabad, India</strong><span>Open to remote & relocation • Immediate joiner</span></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="sbars">
+          <div class="sbr"><div class="sbm"><span>Python & ML</span><span>90%</span></div><div class="sbt"><div class="sbf" data-w="90"></div></div></div>
+          <div class="sbr"><div class="sbm"><span>Full Stack (React/Node)</span><span>80%</span></div><div class="sbt"><div class="sbf" data-w="80"></div></div></div>
+          <div class="sbr"><div class="sbm"><span>Java & C/C++</span><span>75%</span></div><div class="sbt"><div class="sbf" data-w="75"></div></div></div>
+          <div class="sbr"><div class="sbm"><span>AI / Deep Learning</span><span>78%</span></div><div class="sbt"><div class="sbf" data-w="78"></div></div></div>
+          <div class="sbr"><div class="sbm"><span>SQL & Databases</span><span>82%</span></div><div class="sbt"><div class="sbf" data-w="82"></div></div></div>
+          <div class="sbr"><div class="sbm"><span>Cloud & DevOps</span><span>65%</span></div><div class="sbt"><div class="sbf" data-w="65"></div></div></div>
+        </div>
+        <div class="cbox">
+          <div class="ctitle">Certifications & Achievements</div>
+          <div class="ci">Accenture Forage — Data Automation</div>
+          <div class="ci">Walmart Forage — Retail Operations & Supply Chain</div>
+          <div class="ci">Badge of Excellence — Embedded Engineering (NSIC)</div>
+          <div class="ci">Naukri Young Turks — 94% Accuracy Score</div>
+          <div class="ci">AI Engineer Enthusiast — OpenWeaver</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="sec">
+  <div class="si">
+    <div class="stag">Featured Work</div>
+    <h2 class="sh">Things I've built</h2>
+    <div class="sdiv"></div>
+    <p class="ssub">Projects spanning AI, full-stack development, and IoT systems.</p>
+    <div class="pg">
+      <div class="pc reveal"><div class="pe">🛒</div><h3 class="pt">Enterprise Amazon Clone</h3><p class="pd">Production-grade full-stack e-commerce with secure auth, role-based access, multi-step checkout and real payment via Stripe and PayPal.</p><div class="ptags"><span class="ptag">React.js</span><span class="ptag">Node.js</span><span class="ptag">Stripe</span><span class="ptag">PayPal</span><span class="ptag">JWT</span></div><a href="https://github.com/Srinidhicheedalla/amazon-clone" target="_blank" class="plink">View on GitHub</a></div>
+      <div class="pc reveal"><div class="pe">🚦</div><h3 class="pt">RL Traffic Control System</h3><p class="pd">AI-powered adaptive traffic system using Reinforcement Learning deployed on Raspberry Pi with live video analysis. ~30% congestion reduction.</p><div class="ptags"><span class="ptag">Python</span><span class="ptag">OpenCV</span><span class="ptag">DQN</span><span class="ptag">Raspberry Pi</span><span class="ptag">Cloud</span></div><a href="https://github.com/Srinidhicheedalla/rl-traffic-system" target="_blank" class="plink">View on GitHub</a></div>
+      <div class="pc reveal"><div class="pe">🌾</div><h3 class="pt">AI Agriculture Chatbot</h3><p class="pd">NLP-powered chatbot helping farmers with crop recommendations, pest detection and weather-based suggestions via Dialogflow and TensorFlow.</p><div class="ptags"><span class="ptag">TensorFlow</span><span class="ptag">NLTK</span><span class="ptag">Dialogflow</span><span class="ptag">GCP</span><span class="ptag">NLP</span></div><a href="https://github.com/Srinidhicheedalla/agriculture-chatbot" target="_blank" class="plink">View on GitHub</a></div>
+      <div class="pc reveal"><div class="pe">🌤️</div><h3 class="pt">Weather Forecast Web App</h3><p class="pd">Responsive weather dashboard with real-time forecasts, 7-day predictions and interactive Chart.js visualizations via OpenWeatherMap API.</p><div class="ptags"><span class="ptag">Flask</span><span class="ptag">React.js</span><span class="ptag">Chart.js</span><span class="ptag">REST API</span></div><a href="https://github.com/Srinidhicheedalla/weather-app" target="_blank" class="plink">View on GitHub</a></div>
+      <div class="pc reveal"><div class="pe">💡</div><h3 class="pt">IoT Smart Light Automation</h3><p class="pd">Smart home lighting with PIR motion sensors and MQTT remote control — reduces energy consumption by ~57% through intelligent automation.</p><div class="ptags"><span class="ptag">C++</span><span class="ptag">Arduino</span><span class="ptag">Raspberry Pi</span><span class="ptag">MQTT</span><span class="ptag">IoT</span></div><a href="https://github.com/Srinidhicheedalla/iot-light-automation" target="_blank" class="plink">View on GitHub</a></div>
+      <div class="pc pc-more reveal"><div class="pe">🚀</div><h3>More Coming Soon</h3><p>Building new AI and Full Stack projects. Follow on GitHub to stay updated!</p><a href="https://github.com/Srinidhicheedalla" target="_blank" class="bp" style="font-size:0.76rem;padding:0.52rem 1.1rem">Follow on GitHub</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="sec">
+  <div class="si">
+    <div class="stag">Tech Stack</div>
+    <h2 class="sh">Tools & Technologies</h2>
+    <div class="sdiv"></div>
+    <div class="skcat reveal">
+      <div class="skcl">Languages</div>
+      <div class="skg">
+        <div class="sch"><span class="schi">🐍</span><div class="schn">Python</div></div>
+        <div class="sch"><span class="schi">☕</span><div class="schn">Java</div></div>
+        <div class="sch"><span class="schi">⚙️</span><div class="schn">C / C++</div></div>
+        <div class="sch"><span class="schi">🌐</span><div class="schn">JavaScript</div></div>
+        <div class="sch"><span class="schi">🗃️</span><div class="schn">SQL</div></div>
+      </div>
+    </div>
+    <div class="skcat reveal">
+      <div class="skcl">AI / ML & Data</div>
+      <div class="skg">
+        <div class="sch"><span class="schi">🧠</span><div class="schn">TensorFlow</div></div>
+        <div class="sch"><span class="schi">📊</span><div class="schn">Scikit-learn</div></div>
+        <div class="sch"><span class="schi">👁️</span><div class="schn">OpenCV</div></div>
+        <div class="sch"><span class="schi">📈</span><div class="schn">Pandas</div></div>
+        <div class="sch"><span class="schi">🔢</span><div class="schn">NumPy</div></div>
+        <div class="sch"><span class="schi">💬</span><div class="schn">NLP / NLTK</div></div>
+      </div>
+    </div>
+    <div class="skcat reveal">
+      <div class="skcl">Full Stack & Cloud</div>
+      <div class="skg">
+        <div class="sch"><span class="schi">⚛️</span><div class="schn">React.js</div></div>
+        <div class="sch"><span class="schi">🟢</span><div class="schn">Node.js</div></div>
+        <div class="sch"><span class="schi">🌶️</span><div class="schn">Flask</div></div>
+        <div class="sch"><span class="schi">☁️</span><div class="schn">AWS / GCP</div></div>
+        <div class="sch"><span class="schi">🐙</span><div class="schn">Git / GitHub</div></div>
+        <div class="sch"><span class="schi">🐧</span><div class="schn">Linux</div></div>
+        <div class="sch"><span class="schi">🍓</span><div class="schn">Raspberry Pi</div></div>
+        <div class="sch"><span class="schi">🔌</span><div class="schn">Arduino</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec">
+  <div class="si">
+    <div class="stag">Get In Touch</div>
+    <h2 class="sh">Let's work together</h2>
+    <div class="sdiv"></div>
+    <p class="ssub">Actively looking for early-career roles in AI, ML and Full Stack. Let's connect!</p>
+    <div class="cg">
+      <div class="cinf reveal">
+        <a href="/cdn-cgi/l/email-protection#f98a8b9097909d91909a919c9c9d98959598b99e94989095d79a9694" class="cit"><div class="cii">✉️</div><div><strong>Email</strong><span><span class="__cf_email__" data-cfemail="2251504b4c4b464a4b414a474746434e4e4362454f434b4e0c414d4f">[email&#160;protected]</span></span></div></a>
+        <a href="https://www.linkedin.com/in/srinidhicheedalla/" target="_blank" class="cit"><div class="cii">💼</div><div><strong>LinkedIn</strong><span>linkedin.com/in/srinidhicheedalla</span></div></a>
+        <a href="https://github.com/Srinidhicheedalla" target="_blank" class="cit"><div class="cii">🐙</div><div><strong>GitHub</strong><span>Srinidhicheedalla</span></div></a>
+        <div class="cit" style="cursor:default"><div class="cii">📍</div><div><strong>Location</strong><span>Hyderabad, India • Immediate Joiner</span></div></div>
+      </div>
+      <div class="reveal">
+        <form class="cf" onsubmit="return false;">
+          <div class="fr">
+            <div class="fg"><label>Your Name</label><input type="text" id="fn" placeholder="John Doe"/></div>
+            <div class="fg"><label>Email</label><input type="email" id="fe" placeholder="john@company.com"/></div>
+          </div>
+          <div class="fg"><label>Subject</label><input type="text" id="fs" placeholder="Job opportunity / Collaboration"/></div>
+          <div class="fg"><label>Message</label><textarea rows="4" id="fm" placeholder="Hi Srinidhi, I'd love to connect about..."></textarea></div>
+          <button type="button" class="fsb" onclick="sendMail()">Send Message →</button>
+          <div class="fok" id="fok">✓ Opening your email app...</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Srinidhi Cheedalla — Built with passion</p>
+  <div class="fl">
+    <a href="https://github.com/Srinidhicheedalla" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/srinidhicheedalla/" target="_blank">LinkedIn</a>
+    <a href="/cdn-cgi/l/email-protection#deadacb7b0b7bab6b7bdb6bbbbbabfb2b2bf9eb9b3bfb7b2f0bdb1b3">Email</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Nav scroll
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>40))
+
+// Particles
+const cv=document.getElementById('pc'),cx=cv.getContext('2d')
+function rsz(){cv.width=innerWidth;cv.height=innerHeight}
+rsz();window.addEventListener('resize',rsz)
+const pts=Array.from({length:40},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.4+.4,dx:(Math.random()-.5)*.32,dy:(Math.random()-.5)*.32,o:Math.random()*.3+.07}))
+;(function draw(){
+  cx.clearRect(0,0,cv.width,cv.height)
+  pts.forEach(p=>{cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=`rgba(35,71,160,${p.o})`;cx.fill();p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>cv.width)p.dx*=-1;if(p.y<0||p.y>cv.height)p.dy*=-1})
+  pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{const d=Math.hypot(a.x-b.x,a.y-b.y);if(d<105){cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.strokeStyle=`rgba(35,71,160,${.065*(1-d/105)})`;cx.lineWidth=.5;cx.stroke()}}))
+  requestAnimationFrame(draw)
+})()
+
+// Typing
+const ws=['intelligent AI systems.','full-stack web apps.','real-world ML solutions.','IoT & edge systems.','scalable back-end APIs.']
+let wi=0,ci=0,dl=false
+const te=document.getElementById('typed'),cr=document.getElementById('cur')
+setInterval(()=>{cr.style.opacity=cr.style.opacity==='0'?'1':'0'},500)
+;(function t(){const w=ws[wi];if(!dl){te.textContent=w.slice(0,ci+1);ci++;if(ci===w.length){dl=true;setTimeout(t,1600);return}}else{te.textContent=w.slice(0,ci-1);ci--;if(ci===0){dl=false;wi=(wi+1)%ws.length}}setTimeout(t,dl?40:76)})()
+
+// Reveal — add animate class for subtle effect only
+document.querySelectorAll('.reveal').forEach(el=>{
+  el.style.opacity='1';
+  el.style.transform='none';
+})
+
+// Skill bars
+// Skill bars — fill on page load reliably
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    document.querySelectorAll('.sbf').forEach(function(b){
+      b.style.width = b.getAttribute('data-w') + '%';
+    });
+  }, 500);
+});
+// Also trigger on scroll in case page loads slowly
+window.addEventListener('scroll', function fillOnScroll(){
+  document.querySelectorAll('.sbf').forEach(function(b){
+    if(b.style.width === '' || b.style.width === '0px' || b.style.width === '0%'){
+      b.style.width = b.getAttribute('data-w') + '%';
+    }
+  });
+  window.removeEventListener('scroll', fillOnScroll);
+});
+
+// Contact form
+function sendMail(){
+  const n=document.getElementById('fn').value.trim(),e=document.getElementById('fe').value.trim()
+  const s=document.getElementById('fs').value.trim()||'Hello from your Portfolio'
+  const m=document.getElementById('fm').value.trim()
+  const body=(m||'Hi Srinidhi,')+'\n\n— '+n+(e?' ('+e+')':'')
+  window.location.href='mailto:srinidhicheedalla@gmail.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(body)
+  const b=document.querySelector('.fsb')
+  b.tex
